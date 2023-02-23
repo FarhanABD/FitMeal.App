@@ -4,7 +4,7 @@ class SplashPresenter (
     private val view: SplashView
 ) {
     init {
-        view.nextPage(isLogin = 0)
+        view.nextPage(isLogin = 1)
     }
 }
 interface SplashView {
