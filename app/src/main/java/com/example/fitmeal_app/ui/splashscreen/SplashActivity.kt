@@ -8,13 +8,14 @@ import com.example.fitmeal_app.ui.BaseActivity
 import com.example.fitmeal_app.ui.home.HomeActivity
 import com.example.fitmeal_app.ui.login.LoginActivity
 import com.example.fitmeal_app.R
+import com.example.fitmeal_app.preferences.PrefManager
 
 class SplashActivity : BaseActivity(), SplashView{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        SplashPresenter(this)
+        SplashPresenter(this, PrefManager(this))
 
     }
 

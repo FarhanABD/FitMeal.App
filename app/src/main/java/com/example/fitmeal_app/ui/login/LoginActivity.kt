@@ -1,10 +1,18 @@
 package com.example.fitmeal_app.ui.login
 
+import RegisterActivity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.widget.Button
 import android.widget.Toast
+import com.example.fitmeal_app.R
 import com.example.fitmeal_app.databinding.ActivityLoginBinding
 import com.example.fitmeal_app.network.ApiClient
+import com.example.fitmeal_app.preferences.PrefManager
+import com.example.fitmeal_app.ui.home.HomeActivity
+
 
 class LoginActivity : AppCompatActivity(), LoginView{
 
@@ -14,9 +22,27 @@ class LoginActivity : AppCompatActivity(), LoginView{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        presenter = LoginPresenter(this, ApiClient.getService())
+        presenter = LoginPresenter(this,
+            ApiClient.getService(),
+            PrefManager(this)
 
+        )
+
+        val button = findViewById<Button>(R.id.button_register)
+        button.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+    class RegisterActivity : AppCompatActivity() {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_register)
+        }
+    }
+
 
     override fun setupListener() {
 
@@ -40,9 +66,12 @@ class LoginActivity : AppCompatActivity(), LoginView{
     }
 
     override fun loginResponse(response: LoginResponse) {
+        Toast.makeText(applicationContext, response.msg, Toast.LENGTH_SHORT).show()
         when (response.status){
             true -> {
-                Toast.makeText(applicationContext, response.msg, Toast.LENGTH_SHORT).show()
+                presenter.saveLogin(response.data!!)
+                startActivity(Intent(this, HomeActivity::class.java))
+                finish()
             }
             false ->{
 
@@ -53,4 +82,6 @@ class LoginActivity : AppCompatActivity(), LoginView{
     override fun loginError(message: String) {
         Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
     }
+
+
 }
