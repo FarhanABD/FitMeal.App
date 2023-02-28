@@ -6,107 +6,106 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeFragment">
 
-   <androidx.constraintlayout.widget.ConstraintLayout
-       android:layout_width = "match_parent"
-       android:layout_height = "match_parent"
-       android:padding="20dp"
-       >
-       <TextView
-           android:id="@+id/text_title"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Haloo Farhan "
-           android:textColor="@color/black"
-           android:textSize="25sp"
-           android:textStyle="bold"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent"
-           />
-       <TextView
-           android:id="@+id/label_subtitle"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="Mau Makan apa Hari ini ?"
-           android:textColor="@color/black"
-           android:layout_marginTop="5dp"
-           android:textSize="20sp"
-           android:textStyle="bold"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/text_title"
-           />
-       <com.google.android.material.card.MaterialCardView
-           android:id="@+id/card_search"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/label_subtitle"
-           android:layout_marginTop="10dp"
-           app:cardCornerRadius="10dp"
-           app:strokeWidth="1dp"
-           app:strokeColor="@android:color/darker_gray"
-           >
-       <EditText
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:hint="Cari Resep"
-           android:drawableStart="@drawable/ic_search"
-           android:background="@color/white"
-           android:padding="15dp"
-           />
-       </com.google.android.material.card.MaterialCardView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
 
-       <TextView
-           android:id="@+id/label_popular"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="10dp"
-           android:text="Resep Populer"
-           android:textColor="@color/black"
-           android:textSize="20sp"
-           android:textStyle="bold"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/card_search"
-           />
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Haloo Farhan "
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/adapter_popular" />
 
-       <androidx.recyclerview.widget.RecyclerView
-           android:id="@+id/list_popular"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="5dp"
-           android:text="Haloo Farhan "
-           android:textColor="@color/black"
-           android:textSize="20sp"
-           android:textStyle="bold"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/label_popular"
-           />
+        <TextView
+            android:id="@+id/label_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Mau Makan apa Hari ini ?"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_title" />
 
-       <TextView
-           android:id="@+id/label_new"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="10dp"
-           android:text="Resep Terbaru"
-           android:textColor="@color/black"
-           android:textSize="20sp"
-           android:textStyle="bold"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/list_popular"
-           />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_subtitle"
+            app:strokeColor="@android:color/darker_gray"
+            app:strokeWidth="1dp">
 
-       <androidx.recyclerview.widget.RecyclerView
-           android:id="@+id/list_new"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="5dp"
-           android:text="Haloo Farhan "
-           android:textColor="@color/black"
-           android:textSize="20sp"
-           android:textStyle="bold"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@id/label_new"
-           />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:drawableStart="@drawable/ic_search"
+                android:hint="Cari Resep"
+                android:padding="15dp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/label_popular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Resep Populer"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_search" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_popular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Haloo Farhan "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_popular"
+            tools:listitem="@layout/adapter_popular" />
+
+        <TextView
+            android:id="@+id/label_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Resep Terbaru"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/list_popular" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Haloo Farhan "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_new" />
 
 
-   </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
