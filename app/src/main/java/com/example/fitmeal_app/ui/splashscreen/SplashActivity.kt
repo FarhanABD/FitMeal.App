@@ -23,6 +23,7 @@ class SplashActivity : BaseActivity(), SplashView{
         //------- FUNGSI TIMER SPLASH SCREEN --------------------//
         Handler(Looper.myLooper()!!).postDelayed({
             if(isLogin == 1) startActivity(Intent(this, HomeActivity::class.java))
+//            if(isLogin == 0) startActivity(Intent(this, LoginActivity::class.java))
             else startActivity(Intent( this, LoginActivity:: class.java))
             finish()
         }, 2000)

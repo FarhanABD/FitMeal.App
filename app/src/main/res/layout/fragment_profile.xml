@@ -96,12 +96,12 @@
             android:layout_height="wrap_content"
             android:text="Keluar"
             android:textAllCaps="false"
-            app:icon="@drawable/ic_login"
             app:cornerRadius="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:icon="@drawable/ic_login"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

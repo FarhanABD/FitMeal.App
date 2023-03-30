@@ -27,11 +27,6 @@ class ProfileFragment : Fragment(), ProfileView{
         return binding.root
     }
 
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//
-//    }
-
     override fun user(user: LoginData) {
 
         binding.textName.text = user.name
