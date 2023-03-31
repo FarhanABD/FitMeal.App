@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:drawableStart="@drawable/ic_search"
-            android:hint="Cari Resep"
+            android:hint="    Cari Resep"
             android:padding="15dp" />
     </com.google.android.material.card.MaterialCardView>
 
@@ -38,6 +38,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
         tools:listitem="@layout/adapter_category"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -59,7 +62,6 @@
             tools:listitem="@layout/adapter_receipt"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
-
             />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
